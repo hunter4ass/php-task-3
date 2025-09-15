@@ -1,0 +1,3 @@
+[33md5c7aa6[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Revert "php-task-3"
+[33m2b92439[m php-task-3
+[33m3c54de7[m Initialize MVC framework with basic structure, including routing, authentication, and database configuration. Add controllers, models, and views for user management and post display. Implement middleware for authentication checks and set up Composer for dependency management.
