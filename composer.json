@@ -1,0 +1,26 @@
+{
+  "name": "egor-ilchuk/pop-it-mvc",
+  "description": "MVC",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "hunter4ass",
+      "email": "egorilicu@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "illuminate/database": "12.x-dev",
+    "illuminate/events": "12.x-dev",
+    "nikic/fast-route": "^2.0@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Src\\": "core/Src/",
+      "Controller\\": "app/Controller/",
+      "Model\\": "app/Model/"
+    }
+  }
+}
