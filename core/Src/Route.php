@@ -94,6 +94,7 @@ class Route
            case Dispatcher::FOUND:
                $handler = $routeInfo[1];
                $vars = array_values($routeInfo[2]);
+               // Выполняем все middleware и получаем Request
                $vars[] = Middleware::single()->runMiddlewares($httpMethod, $uri);
                $class = $handler[0];
                $action = $handler[1];
@@ -104,4 +105,5 @@ class Route
                break;
        }
    }
+
 }
