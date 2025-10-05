@@ -48,7 +48,10 @@ public function signup(Request $request): string
        $validator = new Validator($request->all(), [
            'name' => ['required'],
            'login' => ['required', 'unique:users,login'],
-           'password' => ['required']
+           'password' => ['required'],
+           'phone' => ['required'],
+           'email' => ['required'],
+           'role' => ['required']
        ], [
            'required' => 'Поле :field пусто',
            'unique' => 'Поле :field должно быть уникально'
