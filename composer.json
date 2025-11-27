@@ -15,12 +15,15 @@
     "illuminate/database": "12.x-dev",
     "illuminate/events": "12.x-dev",
     "nikic/fast-route": "^2.0@dev",
-    "hunter4ass/collectt": "dev-main"
+    "clinic/collection": "*"
   },
   "repositories": [
     {
-      "type": "vcs",
-      "url": "https://github.com/hunter4ass/collectt"
+      "type": "path",
+      "url": "packages/clinic-collection",
+      "options": {
+        "symlink": true
+      }
     }
   ],
   "autoload": {

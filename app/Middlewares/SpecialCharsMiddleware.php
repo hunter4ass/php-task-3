@@ -2,7 +2,7 @@
 namespace Middlewares;
 
 use Src\Request;
-use function Collect\collection;
+use function Clinic\Collection\collection;
 
 class SpecialCharsMiddleware
 {

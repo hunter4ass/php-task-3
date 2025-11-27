@@ -1,0 +1,26 @@
+{
+    "name": "clinic/collection",
+    "description": "Utility collection wrapper for Pop-it MVC demo project",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Clinic Demo",
+            "email": "demo@example.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Clinic\\Collection\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "stable"
+}
+
+
