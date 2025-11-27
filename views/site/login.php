@@ -3,13 +3,16 @@
    <?php if (!empty($message)): ?>
        <div class="alert alert-error"><?= $message ?></div>
    <?php endif; ?>
-   <?php if (!app()->auth::check()): ?>
+   <?php 
+   use Src\Auth\Auth;
+   $oldLogin = $old['login'] ?? '';
+   if (!Auth::check()): ?>
       <form method="post">
-          <input name="csrf_token" type="hidden" value="<?= app()->auth::generateCSRF() ?>"/>
+          <input name="csrf_token" type="hidden" value="<?= Auth::generateCSRF() ?>"/>
 
           <div class="form-group">
              <label>Логин</label>
-             <input type="text" name="login" placeholder="Введите логин">
+             <input type="text" name="login" placeholder="Введите логин" value="<?= $oldLogin ?>">
           </div>
 
           <div class="form-group">

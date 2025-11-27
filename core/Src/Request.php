@@ -27,14 +27,19 @@ class Request
        $this->body[$field] = $value;
    }
 
-   public function get($field)
+   public function get($field, $default = null)
    {
-       return $this->body[$field];
+       return $this->body[$field] ?? $default;
    }
 
    public function files(): array
    {
        return $_FILES;
+   }
+
+   public function file(string $field)
+   {
+       return $_FILES[$field] ?? null;
    }
 
    public function __get($key)

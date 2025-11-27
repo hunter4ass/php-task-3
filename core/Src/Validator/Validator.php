@@ -51,9 +51,9 @@ class Validator
            //Создаем объект валидатора, передаем туда параметры
            $validator = new $validatorClass(
                $fieldName,
-               $this->fields[$fieldName],
+               $this->fields[$fieldName] ?? null,
                $args,
-               $this->messages[$validatorName]);
+               $this->messages[$validatorName] ?? null);
 
            //Если валидация не прошла, то добавляем ошибку в общий массив ошибок
            if (!$validator->rule()) {

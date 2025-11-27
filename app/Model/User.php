@@ -17,15 +17,29 @@ class User extends Model implements IdentityInterface
        'password',
        'phone',
        'email',
-       'role'
+       'role',
+       'birth_date',
+       'policy_number',
+       'specialization'
    ];
 
-   protected static function booted()
+   protected static function booted(): void
    {
-       static::created(function ($user) {
-           $user->password = md5($user->password);
-           $user->save();
+       static::creating(function (User $user) {
+           $user->password = self::makeHash($user->password);
        });
+
+       static::updating(function (User $user) {
+            if ($user->isDirty('password')) {
+                $user->password = self::makeHash($user->password);
+            }
+       });
+   }
+
+   private static function makeHash(string $value): string
+   {
+       // если пароль уже в md5, повторно не хешируем
+       return (bool)preg_match('/^[a-f0-9]{32}$/', $value) ? $value : md5($value);
    }
 
    //Выборка пользователя по первичному ключу

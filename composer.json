@@ -14,8 +14,15 @@
     "php": "^7.4 || ^8.0",
     "illuminate/database": "12.x-dev",
     "illuminate/events": "12.x-dev",
-    "nikic/fast-route": "^2.0@dev"
+    "nikic/fast-route": "^2.0@dev",
+    "hunter4ass/collectt": "dev-main"
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/hunter4ass/collectt"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Src\\": "core/Src/",
