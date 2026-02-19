@@ -2,6 +2,9 @@
 
 const DIR_CONFIG = '/../config';
 
+// Project root: works on both Windows and Linux, does not depend on DOCUMENT_ROOT
+define('PROJECT_ROOT', dirname(__DIR__));
+
 // Load Composer autoloader to resolve PSR-4 classes like Src\Route
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -10,7 +13,7 @@ spl_autoload_register(function ($className) {
     $className = str_replace('\\', '/', $className);
 
     foreach ($paths['classes'] as $path) {
-        $fileName = $_SERVER['DOCUMENT_ROOT'] . "/$paths[root]/$path/$className.php";
+        $fileName = PROJECT_ROOT . "/$paths[root]/$path/$className.php";
         if (file_exists($fileName)) {
             require_once $fileName;
         }
